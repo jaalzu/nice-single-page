@@ -1,0 +1,31 @@
+.footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding-bottom: 4rem;
+
+    img{
+        max-width: 15%;
+    }
+
+    .socials__links{
+       ul{
+        display: flex;
+        gap: 1.3rem;
+
+         li a{
+            color: $black;
+            letter-spacing: -1px;
+
+            &:hover{
+                text-decoration: underline;
+            }
+         }
+       }
+
+    }
+}

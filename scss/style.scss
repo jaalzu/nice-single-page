@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'navbar';
+@import 'hero';
+@import 'gallery';
+@import 'work';
+@import 'footer';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+}
+html, body {
+	width: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: auto;
+	-moz-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+    background: linear-gradient(#8b9da9, #fff6e4);
+box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+    // background: radial-gradient(ellipse at top left, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);
+}
+*{
+    // background-color: $light-white-bg;
+}
+
+h1,h2{
+    font-family: $font-primary;
+    font-weight: 500;
+    color: $black;
+}
+
+p,span,a{
+    font-family: $font-secondary;
+    font-weight: 400;
+}
+
+
+img{
+    min-height: 100%;
+    width: 100%;
+}

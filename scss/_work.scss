@@ -1,0 +1,77 @@
+// .work {
+//     padding-top: 4rem;
+//     margin-bottom: 6rem;
+//     text-align: center;
+//     line-height: 1.4;
+   
+//     h2 {
+//         font-size: 2rem;
+//     }
+    
+//     h3 a {
+//         color: $light-gray; /* Asegúrate de definir $light-gray en tu SCSS */
+//         font-family: $font-primary; /* Asegúrate de definir $font-primary en tu SCSS */
+//         font-size: 1.8rem;
+//         font-weight: 500;
+//         position: relative;
+//         overflow: hidden;
+//         display: inline-block;
+//         transition: color 0.3s ease;
+
+//     h3 a .original__text{
+//         color: rebeccapurple;
+//     }
+
+
+//     }
+   
+// }
+.work {
+    padding-top: 4rem;
+    margin-bottom: 6rem;
+    text-align: center;
+    line-height: 1.4;
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        a {
+            color: $light-gray; /* Asegúrate de definir $light-gray en tu SCSS */
+            font-family: $font-primary; /* Asegúrate de definir $font-primary en tu SCSS */
+            font-size: 1.8rem;
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+
+            
+            .original-text {
+                display: block;
+                transition: opacity 0.5s ease;
+            }
+
+            .hover-text {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                opacity: 0;
+                transition: top 0.3s ease, opacity 0.2s ease;
+            }
+
+            &:hover {
+                .original-text {
+                    opacity: 0;
+                }
+
+                .hover-text {
+                    top: 0;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

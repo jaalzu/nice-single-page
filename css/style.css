@@ -1,0 +1,279 @@
+@charset "UTF-8";
+.navbar {
+  width: 17.7rem;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 1000;
+  position: sticky;
+  background: transparent;
+  top: 4%;
+  display: block;
+  border-radius: 30px;
+}
+.navbar .nav__list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: rgba(212, 212, 212, 0.476);
+  backdrop-filter: blur(100px);
+  justify-content: center;
+  border-radius: 30px;
+}
+.navbar .nav__list ul {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+.navbar .nav__list ul li {
+  background: transparent;
+}
+.navbar .nav__list ul li a {
+  color: black;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  transition: 0.3s ease-out;
+}
+.navbar .nav__list ul li a:hover {
+  background: rgb(227, 227, 227);
+}
+
+.hero {
+  width: 100%;
+  margin-block: 10rem;
+  text-align: center;
+}
+.hero .hero__description {
+  font-size: 1.1rem;
+  margin-inline: 8vw;
+  line-height: 1.4;
+}
+.hero .expertise__list {
+  display: none;
+}
+
+@media screen and (min-width: 1050px) {
+  .hero {
+    margin-block: 12rem;
+  }
+  .hero .hero__description {
+    margin-inline: 20vw;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  .hero .expertise__list {
+    display: block;
+  }
+  .hero .expertise__list ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .hero .expertise__list ul li {
+    position: relative;
+  }
+  .hero .expertise__list ul li i {
+    display: inline-flex;
+    justify-content: center;
+  }
+  .hero .expertise__list ul li a {
+    color: black;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  .hero .expertise__list ul li a span {
+    position: relative;
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+  .hero .expertise__list ul li a::before, .hero .expertise__list ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100%;
+  }
+  .hero .expertise__list ul li a::after {
+    content: attr(data-replace);
+    top: 0;
+    white-space: nowrap;
+    transform: translate3d(100%, 0, 0);
+    transition: transform 0.3s ease;
+    z-index: 1;
+  }
+  .hero .expertise__list ul li a:hover::after, .hero .expertise__list ul li a:focus::after {
+    transform: translate3d(0, 0, 0);
+  }
+  .hero .expertise__list ul li a:hover span, .hero .expertise__list ul li a:focus span {
+    opacity: 0;
+  }
+}
+.gallery {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+.gallery .gallery__grid {
+  margin-inline: 6vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+.gallery .gallery__grid .photo__box {
+  position: relative;
+}
+.gallery .gallery__grid .photo__box img {
+  border-radius: 15px;
+}
+.gallery .gallery__grid .photo__box .group__icons {
+  opacity: 0;
+  transition: 0.2s ease;
+}
+.gallery .gallery__grid .photo__box .group__icons span {
+  position: absolute;
+  left: 5%;
+  top: 2%;
+  background: transparent;
+  color: white;
+}
+.gallery .gallery__grid .photo__box .group__icons i {
+  position: absolute;
+  right: 3%;
+  cursor: pointer;
+  top: 2%;
+  transform: rotate(50deg);
+  background: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: black;
+}
+.gallery .gallery__grid .photo__box .group__icons i:hover {
+  scale: 1.2;
+}
+.gallery .gallery__grid .photo__box .group__icons .span-black {
+  color: black;
+}
+.gallery .gallery__grid .photo__box p {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}
+.gallery .gallery__grid .photo__box:hover .group__icons {
+  opacity: 1;
+}
+
+@media screen and (min-width: 1050px) {
+  .gallery {
+    padding-top: 4rem;
+  }
+  .gallery .gallery__grid {
+    margin-inline: 25vw;
+  }
+}
+.work {
+  padding-top: 4rem;
+  margin-bottom: 6rem;
+  text-align: center;
+  line-height: 1.4;
+}
+.work h2 {
+  font-size: 2rem;
+}
+.work h3 a {
+  color: rgb(142, 142, 142); /* Asegúrate de definir $light-gray en tu SCSS */
+  font-family: "Poppins", sans-serif; /* Asegúrate de definir $font-primary en tu SCSS */
+  font-size: 1.8rem;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.work h3 a .original-text {
+  display: block;
+  transition: opacity 0.5s ease;
+}
+.work h3 a .hover-text {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: top 0.3s ease, opacity 0.2s ease;
+}
+.work h3 a:hover .original-text {
+  opacity: 0;
+}
+.work h3 a:hover .hover-text {
+  top: 0;
+  opacity: 1;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+.footer img {
+  max-width: 15%;
+}
+.footer .socials__links ul {
+  display: flex;
+  gap: 1.3rem;
+}
+.footer .socials__links ul li a {
+  color: black;
+  letter-spacing: -1px;
+}
+.footer .socials__links ul li a:hover {
+  text-decoration: underline;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+html, body {
+  width: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: auto;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  background: linear-gradient(#8b9da9, #fff6e4);
+  box-shadow: inset 0 0 100px hsla(0, 0%, 0%, 0.3);
+}
+
+h1, h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: black;
+}
+
+p, span, a {
+  font-family: "Moderustic", sans-serif;
+  font-weight: 400;
+}
+
+img {
+  min-height: 100%;
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
